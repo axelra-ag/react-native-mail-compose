@@ -115,6 +115,11 @@ class RNMailCompose: NSObject, MFMailComposeViewControllerDelegate {
     controller.dismiss(animated: true, completion: nil)
   }
   
+  @objc
+  static func requiresMainQueueSetup() -> Bool {
+      return false
+  }
+  
   func getTopViewController(window: UIWindow?) -> UIViewController? {
     if let window = window {
       var top = window.rootViewController
